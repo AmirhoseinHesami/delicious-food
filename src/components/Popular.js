@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { Gradient, Card, Wrapper } from "../style.js";
+import { Link } from "react-router-dom";
 
 function Popular() {
   const [popular, setPopular] = useState([]);
@@ -35,16 +36,33 @@ function Popular() {
             arrows: false,
             pagination: false,
             drag: "free",
-            gap: "5rem",
+            gap: "2rem",
+            breakpoints: {
+              1100: {
+                perPage: 3,
+                gap: "1rem",
+              },
+              768: {
+                perPage: 2,
+                gap: "0.5rem",
+                arrows: true,
+              },
+              600: {
+                perPage: 1,
+                arrows: true,
+              },
+            },
           }}
         >
           {popular.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
                 <Card>
-                  <p>{recipe.title}</p>
-                  <img src={recipe.image} alt={recipe.title} />
-                  <Gradient />
+                  <Link to={"/recipe/" + recipe.id}>
+                    <p>{recipe.title}</p>
+                    <img src={recipe.image} alt={recipe.title} />
+                    <Gradient />
+                  </Link>
                 </Card>
               </SplideSlide>
             );
