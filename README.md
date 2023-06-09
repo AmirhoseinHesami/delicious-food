@@ -1,6 +1,6 @@
 # React Cooking Recipe App
 
-**The app is created using `React, React Router, Framer-Motion and Styeld-Components`.**
+**The app is created using `React, React Router, Framer-Motion and Styeld-Components`. Not to mention it uses Spoonacular API to get the data**
 
 ![Screenshot (9589)](https://github.com/AmirhoseinHesami/delicious-food/assets/86534843/dac6c928-312d-4d46-bee5-df052c80875d)
 
